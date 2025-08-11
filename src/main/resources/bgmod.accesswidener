@@ -1,0 +1,6 @@
+accessWidener v1 named
+accessible class net/minecraft/client/MinecraftClient$LoadingContext
+accessible class net/minecraft/client/gui/widget/EntryListWidget$Entry
+accessible field net/minecraft/client/gui/screen/TitleScreen backgroundAlpha F
+accessible field net/minecraft/client/gui/screen/world/CreateWorldScreen tabManager Lnet/minecraft/client/gui/tab/TabManager;
+accessible field net/minecraft/client/gui/screen/TitleScreen doBackgroundFade Z

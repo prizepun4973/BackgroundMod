@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "bgmod",
+  "version": "${version}",
+
+  "name": "BackgroundMod",
+  "description": "custom dynamic and static background support",
+  "authors": ["prizepun4973"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/backgroundmod",
+    "issues": "https://github.com/prizepun4973/BackgroundMod/issues"
+  },
+
+  "license": "unlicense",
+  "icon": "assets/bgmod/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "client": [ "prizepun4973.bgmod.BGMod" ]
+  },
+
+  "mixins": [
+    "bgmod.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "modmenu": ">=${modmenu_version}"
+  }
+}

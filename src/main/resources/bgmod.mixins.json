@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "prizepun4973.bgmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "MixinClient",
+    "MixinScreen",
+    "MixinPanorama",
+    "MixinEntryListWidget",
+    "MixinCreateWorldScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true}
+}
