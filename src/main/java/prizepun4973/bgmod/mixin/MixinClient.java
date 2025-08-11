@@ -66,11 +66,6 @@ public class MixinClient {
         BGMod.curFrame = 0;
     }
 
-    @Inject(method="getFramerateLimit", at = @At("HEAD"), cancellable = true)
-    private void getFramerate(CallbackInfoReturnable<Integer> cir) {
-        cir.setReturnValue(MinecraftClient.getInstance().getWindow().getFramerateLimit());
-    }
-
     @Inject(method = "setScreen", at = @At("HEAD"), cancellable = true)
     private void noTitleScreen(Screen screen, CallbackInfo ci){
         if (screen instanceof TitleScreen) {
