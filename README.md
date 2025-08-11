@@ -1,1 +1,0 @@
-[icon by https://x.com/Neve_AI](https://x.com/Neve_AI)
