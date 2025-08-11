@@ -1,5 +1,7 @@
 package prizepun4973.bgmod.mixin;
 
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.TitleScreen;
 import prizepun4973.bgmod.BGMod;
 import prizepun4973.bgmod.screen.MenuScreen;
 import net.minecraft.client.MinecraftClient;
@@ -64,14 +66,17 @@ public class MixinClient {
         BGMod.curFrame = 0;
     }
 
-    @Inject(method = "collectLoadTimes", at = @At(value = "TAIL"))
-    private void toMenu(MinecraftClient.LoadingContext loadingContext, CallbackInfo ci){
-        MinecraftClient.getInstance().setScreen(new MenuScreen());
-    }
-
     @Inject(method="getFramerateLimit", at = @At("HEAD"), cancellable = true)
     private void getFramerate(CallbackInfoReturnable<Integer> cir) {
         cir.setReturnValue(MinecraftClient.getInstance().getWindow().getFramerateLimit());
+    }
+
+    @Inject(method = "setScreen", at = @At("HEAD"), cancellable = true)
+    private void noTitleScreen(Screen screen, CallbackInfo ci){
+        if (screen instanceof TitleScreen) {
+            MinecraftClient.getInstance().setScreen(new MenuScreen());
+            ci.cancel();
+        }
     }
     
     @Unique
